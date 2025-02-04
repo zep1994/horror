@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    width: 320px;
+    margin: 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #000, #2a0202, #1b0c1b);
+    color: #f8f8f8;
+    text-shadow: 1px 1px 2px rgba(255, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Horror-styled Title */
+h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #ff1e00;
+    text-shadow: 0 0 8px #ff0000, 0 0 16px #8b0000;
+    animation: flicker 1.5s infinite alternate;
+    text-align: center;
+}
+
+/* Flickering Effect */
+@keyframes flicker {
+    0% { opacity: 1; text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000; }
+    50% { opacity: 0.85; text-shadow: 0 0 8px #ff0000, 0 0 16px #8b0000; }
+    100% { opacity: 1; text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000; }
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #ddd;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* News Section with Readable Contrast */
+#news {
+    font-size: 14px;
+    background: rgba(34, 34, 34, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #600;
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+    font-weight: 400;
+}
+
+/* Blood Drip Animation */
+h1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    width: 120px;
+    height: 10px;
+    background: radial-gradient(circle, #ff0000, transparent);
+    transform: translateX(-50%);
+    animation: drip 2s infinite;
+}
+
+@keyframes drip {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    50% { transform: translateX(-50%) translateY(5px); opacity: 0.8; }
+    100% { transform: translateX(-50%) translateY(10px); opacity: 0; }
+}
